@@ -1,0 +1,59 @@
+0. What Virtual Connect is not
+==============================
+Virtual Connect isn’t a switch, isn’t part of the network, and
+it doesn’t control anything in the network. 
+And those are all good things. 
+Data center Ethernet switches are complicated machines.
+They’re part of a complex network of switches and routers
+in which every change needs to be controlled
+by a LAN or SAN administrator 
+with special skills and insights into that network. 
+Likewise, the server infrastructure is a complicated
+system that demands the special skills and insights of
+the system administrator.
+Virtual Connect allows servers to connect to the network
+in a way that doesn’t affect the network at all. 
+So the system administrator can add new servers, make server changes, and
+manage Virtual Connect without the network administrator needing to get involved.
+
+1. Overcoming rigid capacity per NIC
+====================================
+HP created Flex-10 technology to deal with the issue of 1Gb/s - 10Gb/s rigidity.
+To get those same eight NICs and four redundant networks using Flex-10,
+you don’t need any mezzanine cards and 
+you only need two Virtual Connect Flex-10/10D or Virtual Connect FlexFabric interconnect modules in the enclosure.
+Therefore, you only have to buy two modules instead of eight.
+
+2. Converged Ethernet and Fibre Channel
+=======================================
+But you can eliminate even more hardware if you converge Ethernet and Fibre Channel onto a single FlexFabric adapter.
+With 10Gb FlexFabric Adapters on server blades and 
+just two Virtual Connect FlexFabric 10Gb Modules or 
+two VirtualConnect Flex-10/10D Modules,
+you can eliminate HBAs on each server and 
+Fibre Channel SAN switches in each HP BladeSystem enclosure.
+Example: 10Gb FlexFabric Adapter
+--------------------------------
+The FlexibleLOM HP FlexFabric 10Gb 2-port 554FLB Adapter,
+provides six FlexNIC and two FlexHBA connections or eight FlexNIC connections on each server.
+
+The Virtual Connect FlexFabric Modules and 
+Virtual Connect Flex-10/10D modules and 
+FlexFabric Adapters
+can converge Ethernet and Fibre Channel traffic from HP server blades.
+
+So, instead of using separate Ethernet and Fibre Channel adapters and switches, 
+both types of traffic are combined on a single wire from the server to the Virtual Connect module.
+
+Two new standards are combined with Virtual Connect and Flex-10 technology to accomplish this:
+? Fibre Channel over Ethernet (FCoE) 
+encapsulates Fibre Channel frames
+so they can be transmitted over network Ethernet.
+? Data Center Bridging (DCB) improves Ethernet performance
+to resemble the quality of a Fibre Channel network.
+DCB has also been called Converged Enhanced Ethernet (CEE) and lossless Ethernet.
+
+3. Configuration limitations
+============================
+NOTE: When using VC Flex-10 Modules with Flex-10 NICs on server blades,
+only VC Ethernet modules may be used for Ethernet connections in the same enclosure.
